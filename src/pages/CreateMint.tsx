@@ -12,7 +12,6 @@ import { MintCreatedModal } from "@/components/modals/MintCreatedSuccess";
 type Props = {
   onSubmit?: () => void;
 };
-
 const CreateMint = ({ onSubmit }: Props) => {
   const { publicKey: connectedWallet } = useWallet();
   const { createMint } = useZKCompression();
@@ -39,7 +38,6 @@ const CreateMint = ({ onSubmit }: Props) => {
         ?.toLowerCase()
         .includes("not enough balance");
       if (isInsufficientBalance) {
-        console.log("Insufficient balance");
         toast({
           title: "Insufficient balance",
           description: "You do not have enough balance to send tokens",
@@ -68,62 +66,70 @@ const CreateMint = ({ onSubmit }: Props) => {
   }
 
   return (
-    <>
-      <div className="flex justify-center w-full">
-        <div className="max-w-md flex-1">
-          <h1 className="text-4xl font-semibold text-gray-700 pb-7 w-full">
-            Create Mint
-          </h1>
-          <div className="pb-5">
-            <div className="w-full">
-              <Label>Decimals</Label>
-              <Input
-                 className="w-full"
-                disabled={isCreating}
-                type="number"
-                placeholder="9"
-                value={decimals}
-                onChange={(e) => {
-                  if (Number(e.target.value) > 0) {
-                    setDecimals(Number(e.target.value));
-                  } else {
-                    setDecimals("");
-                  }
-                }}
-              />
-            </div>
-            <div>
-              <Label>Authority</Label>
-              <Input
-                disabled={isCreating}
-                type="text"
-                placeholder="0xqwerty..."
-                value={authority}
-                onChange={(e) => setAuthority(e.target.value)}
-              />
-            </div>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-900 to-gray-900">
+      <div className="p-10 max-w-lg w-full bg-[#2A2D3C] bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50">
+        <h1 className="text-4xl font-bold text-white mb-6 text-center">
+          Create Mint
+        </h1>
+        <div className="space-y-4">
+          <div>
+            <Label className="text-white">Decimals</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="number"
+              placeholder="9"
+              value={decimals}
+              onChange={(e) => {
+                setDecimals(Number(e.target.value) > 0 ? Number(e.target.value) : "");
+              }}
+            />
           </div>
-          {isCreating ? (
-            <div className="flex justify-center h-9 items-center">
-              <Loader className="w-5" />
-            </div>
-          ) : (
-            <Button
-              className="w-full bg-gray-700 hover:bg-gray-600"
-              disabled={!canSend}
-              onClick={handleCreateMint}
-            >
-              Create Mint
-            </Button>
-          )}
+          <div>
+            <Label className="text-white">Authority</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="text"
+              placeholder="0xqwerty..."
+              value={authority}
+              onChange={(e) => setAuthority(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label className="text-white">Authority</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="text"
+              placeholder="0xqwerty..."
+              value={authority}
+              onChange={(e) => setAuthority(e.target.value)}
+            />
+          </div>
         </div>
+        {isCreating ? (
+          <div className="flex justify-center h-9 items-center">
+            <Loader className="w-5" />
+          </div>
+        ) : (
+          <Button
+            className="mt-6 w-full bg-gradient-to-r from-purple-700 to-purple-900 text-white hover:bg-purple-600 shadow-lg hover:shadow-purple-900 rounded-lg py-2"
+            disabled={!canSend}
+            onClick={handleCreateMint}
+          >
+            Create Mint
+          </Button>
+        )}
       </div>
-      <MintCreatedModal
-        isOpen={!!newMintAddress}
-        onClose={() => setNewMintAddress(null)}
-        mintAddress={newMintAddress || ""}
-      />
-    </>
+      {newMintAddress && (
+        <MintCreatedModal
+          isOpen={!!newMintAddress}
+          onClose={() => setNewMintAddress(null)}
+          mintAddress={newMintAddress || ""}
+        />
+      )}
+    </div>
   );
 };
 

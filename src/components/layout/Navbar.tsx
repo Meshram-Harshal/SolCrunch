@@ -25,8 +25,9 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  return (
-    <nav className="bg-[#1a1a1a] shadow-lg border-b border-gray-800 text-white fixed w-full top-0 left-0 z-10">
+  return (<nav className="bg-gradient-to-b from-black to-gray-900 shadow-xl border-b border-gray-700 text-white fixed w-full top-0 left-0 z-10">
+
+
       <div className="max-w-7xl mx-auto px-3 py-4">
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
