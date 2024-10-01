@@ -86,7 +86,17 @@ const Navbar: React.FC = () => {
                           Minting Forge
                         </Link>
                       </li>
+
                       <li>
+                        <Link
+                          to="/crunchy-swap"
+                          className="block px-4 py-2 hover:bg-gray-800 rounded transition-colors"
+                          onClick={() => setDropdownOpen(false)} // Close on click
+                        >
+                          Crunchy Swap
+                        </Link>
+                      </li>
+                      {/* <li>
                         <Link
                           to="/tx"
                           className="block px-4 py-2 hover:bg-gray-800 rounded transition-colors"
@@ -94,7 +104,7 @@ const Navbar: React.FC = () => {
                         >
                           Transactions
                         </Link>
-                      </li>
+                      </li> */}
                       {/* New Find Your Rent Link */}
                       <li>
                         <Link
@@ -112,8 +122,8 @@ const Navbar: React.FC = () => {
 
               {/* About Tab */}
               <li>
-                <Link to="/about" className="hover:text-gray-300 transition-colors">
-                  About
+                <Link to="/tx" className="hover:text-gray-300 transition-colors">
+                Transactions
                 </Link>
               </li>
             </ul>
