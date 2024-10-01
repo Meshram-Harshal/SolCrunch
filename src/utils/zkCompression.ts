@@ -20,6 +20,8 @@ import { Program, AnchorProvider } from "@coral-xyz/anchor";
 import { IDL } from "@lightprotocol/compressed-token";
 import { getRpcUrl } from "@/utils/environment";
 import { getMint } from "@solana/spl-token";
+import { Buffer } from 'buffer';
+
 
 export const ZK_NETWORK_RPC_TESTNET = getRpcUrl();
 export const PHOTON_RPC_ENDPOINT_TESTNET = getRpcUrl();
