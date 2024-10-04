@@ -9,21 +9,26 @@ import WalletProvider from "./context/walletContext";
 import { ZKCompressionProvider } from "./context/zkCompressionContext";
 import { TokenContextProvider } from "./context/tokensContexts";
 import Navbar from "./components/layout/Navbar"; // Import Navbar instead of Sidebar
-import Rent from './pages/Rent';
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
+
+import Rent from './pages/Rent';
 import TokenBalances from "./pages/CompressedTokens";
 import CompressedMintDetail from "./pages/CompressedMintDetail";
 import CreateMint from "./pages/CreateMint";
 import Transactions from "./pages/Transactions";
 import CompressedTokens from "./pages/CompressedTokens";
-import Swap from "./pages/Swap"
+import Swap from "./pages/Swap";
+import Home from "./pages/Home/Home";
 
-
+// Main layout component (for routes other than Home)
 const AppLayout = () => (
   <div className="flex flex-col h-screen">
-    <Navbar /> {/* Include the Navbar */}
-    <main className="flex-grow overflow-auto bg-gray-50"> {/* Added margin-top to avoid collision */}
-      <Outlet />
+    <Navbar /> 
+    <main className="flex-grow overflow-auto bg-gray-50">
+      <Outlet /> {/* This will render the nested routes (e.g. TokenBalances, CreateMint, etc.) */}
     </main>
   </div>
 );
@@ -34,8 +39,8 @@ const router = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        index: true,
-        element: <TokenBalances />,
+        index: true, // The default route ("/") renders Home
+        element: <Home />,
       },
       {
         path: "/Minting-Forge",

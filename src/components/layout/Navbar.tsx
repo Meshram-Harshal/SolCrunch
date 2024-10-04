@@ -25,9 +25,8 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
-  return (<nav className="bg-gradient-to-b from-black to-gray-900 shadow-xl border-b border-gray-700 text-white fixed w-full top-0 left-0 z-10">
-
-
+  return (
+    <nav className="fixed w-full top-0 left-0 z-10 bg-white/10 backdrop-blur-lg border-b border-white/30 shadow-lg">
       <div className="max-w-7xl mx-auto px-3 py-4">
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
@@ -35,18 +34,19 @@ const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="SolCrunch Logo"
-              className="h-12 w-30"  
+              className="h-12 w-30"
             />
           </Link>
 
-
-
           {/* Centered Navigation Menu */}
           <div className="flex-1 flex justify-center">
-            <ul className="flex space-x-10 font-playpen">
+            <ul className="flex space-x-10 font-playpen text-lg text-white">
               {/* Home Tab */}
               <li>
-                <Link to="/" className="hover:text-gray-300 transition-colors">
+                <Link
+                  to="/"
+                  className="hover:text-purple-500 transition-colors"
+                >
                   Home
                 </Link>
               </li>
@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
               <li className="relative">
                 <button
                   onClick={toggleDropdown}
-                  className="hover:text-gray-300 transition-colors"
+                  className="hover:text-purple-500 transition-colors"
                 >
                   Explore
                 </button>
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
                 {dropdownOpen && (
                   <div
                     ref={dropdownRef}
-                    className="absolute left-0 mt-2 w-54 bg-black bg-opacity-70 backdrop-blur-lg rounded-lg shadow-lg opacity-100 transform scale-100 transition-all duration-300 ease-in-out z-10"
+                    className="absolute left-0 mt-2 w-54 bg-black/70 backdrop-blur-lg rounded-lg shadow-lg z-10"
                   >
                     <ul className="py-2">
                       <li>
@@ -76,7 +76,6 @@ const Navbar: React.FC = () => {
                           Compression/Decompression
                         </Link>
                       </li>
-
                       <li>
                         <Link
                           to="/Minting-Forge"
@@ -86,7 +85,6 @@ const Navbar: React.FC = () => {
                           Minting Forge
                         </Link>
                       </li>
-
                       <li>
                         <Link
                           to="/crunchy-swap"
@@ -96,16 +94,6 @@ const Navbar: React.FC = () => {
                           Crunchy Swap
                         </Link>
                       </li>
-                      {/* <li>
-                        <Link
-                          to="/tx"
-                          className="block px-4 py-2 hover:bg-gray-800 rounded transition-colors"
-                          onClick={() => setDropdownOpen(false)} // Close on click
-                        >
-                          Transactions
-                        </Link>
-                      </li> */}
-                      {/* New Find Your Rent Link */}
                       <li>
                         <Link
                           to="/rent"
@@ -120,10 +108,10 @@ const Navbar: React.FC = () => {
                 )}
               </li>
 
-              {/* About Tab */}
+              {/* Transactions Tab */}
               <li>
-                <Link to="/tx" className="hover:text-gray-300 transition-colors">
-                Transactions
+                <Link to="/tx" className="hover:text-purple-500 transition-colors">
+                  Transactions
                 </Link>
               </li>
             </ul>

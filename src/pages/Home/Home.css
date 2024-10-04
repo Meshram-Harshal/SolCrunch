@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+.outer-home {
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center;
+    color: white;
+    padding: 2% 5%;
+    overflow: hidden;
+    background: rgb(15, 3, 63);
+    min-height: 100vh; /* Changed to min-height */
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+    margin-bottom: 7rem;
+}
+
+.home-container img{
+    width: 110vw;
+}
+
+.home-content {
+    max-width: 50%;
+    text-align: left;
+    padding: 2rem;
+    margin-top: 7rem;
+}
+
+.h1-home {
+    font-size: 3rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    
+}
+
+.p-home {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.swap-button {
+    padding: 12px 40px;
+    font-size: 1.2rem;
+    background: linear-gradient(145deg, #6b00ff, #9b00ff);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.swap-button:hover {
+    background: linear-gradient(145deg, #5a00cc, #8a00cc);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.token-info {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+.token-count {
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(145deg, #4a00e0, #8e2de2);
+    color: white;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+
+.crypto-illustration {
+    max-width: 35%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.logo-slider {
+    width: 100%;
+    margin-top: 3rem; /* Gap between content and slider */
+}
+
+/* Logo Item Styles */
+.logo-item {
+    text-align: center;
+}
+
+.logo-item img {
+    max-width: 150px; /* Adjust logo size */
+    height: auto;
+    filter: brightness(1.2);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .home-content {
+        max-width: 60%;
+    }
+
+    .h1-home {
+        font-size: 2.5rem;
+    }
+
+    .p-home {
+        font-size: 1.1rem;
+    }
+
+    .swap-button {
+        padding: 10px 30px;
+    }
+
+    .crypto-illustration {
+        max-width: 25%;
+    }
+
+    .logo-item img {
+        max-width: 80px; /* Adjust logo size for smaller screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .crypto-illustration {
+        display: none; /* Hide image on mobile */
+    }
+
+    .h1-home {
+        font-size: 2rem;
+    }
+
+    .p-home {
+        font-size: 1rem;
+    }
+
+    .swap-button {
+        padding: 8px 20px;
+    }
+
+    .token-count {
+        font-size: 1.2rem;
+    }
+
+    .logo-item img {
+        max-width: 60px; /* Further adjust for mobile */
+    }
+}
+
+
+
+.logo-slider {
+    width: 100%;
+    margin-top: 3rem; /* Gap between content and slider */
+    display: flex;     /* Use flexbox for alignment */
+    justify-content: space-between; /* Space out logo items */
+}
+
+.logo-item {
+    text-align: center;
+    margin: 0 20px; /* Add horizontal margin for spacing */
+}
+
+.logo-item img {
+    max-width: 300px; /* Adjust logo size */
+    height: auto;
+    filter: brightness(1.2);
+}
+
+
+/* New Section Styles */
+.why-use-section {
+    padding: 3rem 0;
+    backdrop-filter: blur(10px); /* Glass effect */
+}
+
+.section-title {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 6rem; /* Increase bottom margin */
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px; /* Add letter spacing */
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center; /* Center align cards */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 2rem; /* Increase space between cards */
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
+    border-radius: 15px;
+    padding: 3rem; /* Increase padding */
+    width: 300px; /* Wider cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center; /* Center text */
+    position: relative; /* Allow positioning of the icon */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.card:nth-child(odd) {
+    margin-bottom: 5rem;
+    transform: translateY(-15px); 
+}
+
+.card:nth-child(even) {
+    margin-top: 5rem;
+    transform: translateY(15px); /* Move even cards down */
+}
+
+.icon {
+    font-size: 5rem; /* Make icons bigger */
+    color: linear-gradient(to right, #6a1b9a, #ffffff); /* Gradient color for icons */
+    display: inline-block; /* Center icons */
+    margin-bottom: 1rem; /* Space below icons */
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.card p {
+    font-size: 1rem;
+    color: white;
+    
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.faq-section {
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #ffffff; /* Adjust the color as needed */
+}
+
+.faq-container {
+    margin-top: 15px;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 10px;
+    cursor: pointer;
+    color: #ffffff; /* Adjust the color as needed */
+}
+
+.faq-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem; /* Adjust font size as needed */
+    gap: 32rem;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.faq-answer {
+    margin-top: 5px;
+    font-size: 18px; 
+    color: rgba(255, 255, 255, 0.8); 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Show the answer when active */
+}
+
+
+
+.footer {
+    padding: 3rem 0;
+    color: #fff;
+    text-align: left; /* Align text to the left */
+    font-family: 'Arial', sans-serif;
+    display: flex; /* Flexbox layout for footer */
+    justify-content: space-between; /* Space between left and right */
+    align-items: flex-start; /* Align items to the start */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+}
+
+.footer-content {
+    margin-bottom: 2rem;
+    flex: 1; /* Allow it to grow */
+    max-width: 300px; /* Limit width of the left section */
+}
+
+.footer-logo img {
+    width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: flex-start; /* Align social icons to the left */
+    gap: 1.5rem;
+}
+
+.footer-icon {
+    font-size: 1.8rem;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-icon:hover {
+    color: #1da1f2;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 1rem; /* Space between links */
+    flex: 1; /* Allow it to grow */
+    max-width: 300px; /* Limit width of the right section */
+    align-items: flex-end; /* Align links to the right */
+}
+
+.footer-links h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #1da1f2;
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 2rem; /* Space above bottom text */
+    text-align: center; /* Center the bottom text */
+    width: 100%; /* Full width for bottom section */
+}
+
+.footer-policies a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-policies span {
+    margin: 0 0.5rem;
+}
+
+.footer-policies a:hover {
+    color: #1da1f2;
+}
+
+
+.footer {
+    padding: 3rem 0;
+    color: #fff;
+    text-align: left; /* Align text to the left */
+    font-family: 'Arial', sans-serif;
+    display: flex; /* Flexbox layout for footer */
+    justify-content: space-between; /* Space between left and right */
+    align-items: flex-start; /* Align items to the start */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    position: relative; /* Set position to relative */
+    bottom: -75px; /* Position at the bottom */
+    width: 100%; /* Full width for footer */
+}
+
+.outer-home {
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+    align-items: center;
+    color: white;
+    padding: 2% 5%;
+    overflow: hidden;
+    background: rgb(15, 3, 63);
+    min-height: 100vh; /* Changed to min-height */
+    padding-bottom: 5rem; /* Add bottom padding to prevent content from overlapping footer */
+}
+
+.footer-bottom {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: center; /* Center the bottom text */
+    position: absolute; /* Position absolute for the bottom text */
+    bottom: 0;
+}

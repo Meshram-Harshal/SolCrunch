@@ -131,3 +131,38 @@ input[type="number"] {
 .wallet-adapter-dropdown-list-item:hover {
   background-color: #f0f0f0 !important;
 }
+
+
+/* Customize the scrollbar width */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar for horizontal scrollbar */
+}
+
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+  background: rgb(15, 3, 63); /* Color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: rgb(15, 3, 63); /* Color of the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+/* Change thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(15, 3, 63); /* Color of the thumb when hovered */
+}
+
+/* Customize scrollbar for Firefox */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgb(15, 3, 63) rgb(15, 3, 63); /* thumb color and track color */
+}
+
+/* For Internet Explorer */
+.scrollable-element {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Autohiding scrollbar */
+}
