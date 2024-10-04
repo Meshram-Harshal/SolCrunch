@@ -1879,6 +1879,11 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@jup-ag/api@^6.0.29":
+  version "6.0.29"
+  resolved "https://registry.npmjs.org/@jup-ag/api/-/api-6.0.29.tgz"
+  integrity sha512-1gUY1txmL/gG14VDZMjeKVqhSzeg4L2cImdC7dGLYB5DP5D5lwpR+FarvhqehEi+63/RWOUKTTU4fablGpeIUQ==
+
 "@keystonehq/alias-sampling@^0.1.1":
   version "0.1.2"
   resolved "https://registry.npmjs.org/@keystonehq/alias-sampling/-/alias-sampling-0.1.2.tgz"

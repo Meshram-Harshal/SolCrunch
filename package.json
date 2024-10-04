@@ -12,6 +12,7 @@
   "dependencies": {
     "@coral-xyz/anchor": "0.29.0",
     "@heroicons/react": "^2.1.5",
+    "@jup-ag/api": "^6.0.29",
     "@lightprotocol/compressed-token": "^0.11.1",
     "@lightprotocol/stateless.js": "^0.11.0",
     "@lightprotocol/zk-compression-cli": "^0.10.0",
