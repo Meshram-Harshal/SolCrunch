@@ -123,7 +123,7 @@ const CompressedTokens: React.FC = () => {
   } = useSplTokenAccounts();
 
   // Compression Context
-  const { compressAndReclaimRent, descompressToken } = useZKCompression();
+  const { compressAndReclaimRent, decompressToken } = useZKCompression();
 
   // Toast for notifications
   const { toast } = useToast();
@@ -221,7 +221,7 @@ const CompressedTokens: React.FC = () => {
 
       for (const token of selectedTokens) {
         try {
-          await descompressToken({
+          await decompressToken({
             mint: new PublicKey(token.mint),
             amount: Number('balance' in token ? token.balance : token.amount),
           });
@@ -264,7 +264,7 @@ const CompressedTokens: React.FC = () => {
     } finally {
       setIsProcessing(false);
     }
-  }, [selectedTokens, descompressToken, toast]);
+  }, [selectedTokens, decompressToken, toast]);
 
   return (
     <div className="flex flex-col items-center w-full max-w-2xl mx-auto">

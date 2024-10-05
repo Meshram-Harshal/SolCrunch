@@ -16,7 +16,7 @@ const DecompressTokensForm = ({
   mint,
   onSubmit,
 }: Props) => {
-  const { descompressToken } = useZKCompression();
+  const { decompressToken } = useZKCompression();
   const [amount, setAmount] = useState<string | number>("");
   const [isDecompressing, setIsDecompressing] = useState(false);
   const { toast } = useToast();
@@ -27,7 +27,7 @@ const DecompressTokensForm = ({
     if (!canSend) return;
     try {
       setIsDecompressing(true);
-      await descompressToken({
+      await decompressToken({
         mint: new PublicKey(mint),
         amount: Number(amount),
       });
