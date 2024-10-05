@@ -12,26 +12,32 @@ import { MintCreatedModal } from "@/components/modals/MintCreatedSuccess";
 type Props = {
   onSubmit?: () => void;
 };
+
 const CreateMint = ({ onSubmit }: Props) => {
   const { publicKey: connectedWallet } = useWallet();
   const { createMint } = useZKCompression();
   const { toast } = useToast();
   const [authority, setAuthority] = useState(connectedWallet?.toBase58() || "");
   const [decimals, setDecimals] = useState<string | number>(9);
+  const [mintAmount, setMintAmount] = useState<string | number>("");  // Added mintAmount state
   const [isCreating, setIsCreating] = useState(false);
   const [newMintAddress, setNewMintAddress] = useState<string | null>(null);
 
-  const canSend = !!authority && decimals !== "";
+  const canSend = !!authority && decimals !== "" && mintAmount !== "";  // Check mintAmount
 
   const handleCreateMint = async () => {
     if (!canSend) return;
     try {
       setIsCreating(true);
-      const { mint: newMintAddress } = await createMint({
+
+      const { mint: newMintPublicKey } = await createMint({
         authority: new PublicKey(authority),
         decimals: Number(decimals || 0),
+        to: connectedWallet as PublicKey,  // Send minted tokens to connected wallet
+        amount: Number(mintAmount),        // Specify amount to mint
       });
-      setNewMintAddress(newMintAddress.toBase58());
+
+      setNewMintAddress(newMintPublicKey.toBase58());
       onSubmit?.();
     } catch (error: any) {
       const isInsufficientBalance = error?.message
@@ -40,13 +46,13 @@ const CreateMint = ({ onSubmit }: Props) => {
       if (isInsufficientBalance) {
         toast({
           title: "Insufficient balance",
-          description: "You do not have enough balance to send tokens",
+          description: "You do not have enough balance to mint tokens",
           variant: "destructive",
         });
       } else {
         toast({
           title: "Error",
-          description: "An error occurred while sending tokens",
+          description: "An error occurred while creating the mint",
           variant: "destructive",
         });
       }
@@ -57,10 +63,8 @@ const CreateMint = ({ onSubmit }: Props) => {
 
   if (!connectedWallet) {
     return (
-      <div className="flex justify-center items-center">
-        <p className="text-gray-500 font-thin">
-          Connect your wallet to create a mint
-        </p>
+      <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-900 to-gray-900">
+        <p className="text-gray-500 font-thin">Connect your wallet to create a mint</p>
       </div>
     );
   }
@@ -68,9 +72,7 @@ const CreateMint = ({ onSubmit }: Props) => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gradient-to-b from-purple-900 to-gray-900">
       <div className="p-10 max-w-lg w-full bg-[#2A2D3C] bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50">
-        <h1 className="text-4xl font-bold text-white mb-6 text-center">
-          Create Mint
-        </h1>
+        <h1 className="text-4xl font-bold text-white mb-6 text-center">Create Mint</h1>
         <div className="space-y-4">
           <div>
             <Label className="text-white">Decimals</Label>
@@ -97,14 +99,16 @@ const CreateMint = ({ onSubmit }: Props) => {
             />
           </div>
           <div>
-            <Label className="text-white">Authority</Label>
+            <Label className="text-white">Mint Amount</Label>  {/* New mintAmount input */}
             <Input
               className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
               disabled={isCreating}
-              type="text"
-              placeholder="0xqwerty..."
-              value={authority}
-              onChange={(e) => setAuthority(e.target.value)}
+              type="number"
+              placeholder="Enter amount to mint"
+              value={mintAmount}
+              onChange={(e) => {
+                setMintAmount(Number(e.target.value) > 0 ? Number(e.target.value) : "");
+              }}
             />
           </div>
         </div>
@@ -118,7 +122,7 @@ const CreateMint = ({ onSubmit }: Props) => {
             disabled={!canSend}
             onClick={handleCreateMint}
           >
-            Create Mint
+            Create Mint and Mint Tokens
           </Button>
         )}
       </div>
