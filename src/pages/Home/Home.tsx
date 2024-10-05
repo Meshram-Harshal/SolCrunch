@@ -131,14 +131,9 @@ const Home: React.FC = () => {
                     <div className="footer-text">
                         <p>Your description or tagline here.</p>
                     </div>
-                    <div className="footer-socials">
-                        <a href="https://twitter.com/" className="footer-icon">
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a href="https://facebook.com/" className="footer-icon">
-                            <i className="fab fa-facebook"></i>
-                        </a>
-                        {/* Add more social icons as needed */}
+                    <div style={{fontSize:"2rem"}} className="footer-socials">
+                        <FaTwitter />
+                        <FaDiscord />
                     </div>
                 </div>
                 <div className="footer-links">
