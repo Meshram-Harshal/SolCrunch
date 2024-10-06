@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { AiOutlineSwap } from 'react-icons/ai';
 
 const Swap = () => {
   const [sellingCoin, setSellingCoin] = useState('USDC');
   const [buyingCoin, setBuyingCoin] = useState('SOL');
   const [amount, setAmount] = useState('');
+
+  // Convert string to number safely
+  const parsedAmount = parseFloat(amount) || 0;
 
   const handleSwap = () => {
     console.log(`Swapping ${amount} ${sellingCoin} for ${buyingCoin}`);
@@ -68,7 +71,7 @@ const Swap = () => {
             <input
               type="number"
               readOnly
-              value={(amount * 1).toFixed(2)} // Display the swapped amount here
+              value={(parsedAmount * 1).toFixed(2)} // Use parsedAmount (number)
               placeholder="0.00"
               className="bg-gray-600 text-white rounded-md p-2 flex-1"
             />

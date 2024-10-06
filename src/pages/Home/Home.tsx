@@ -48,7 +48,7 @@ const Home: React.FC = () => {
                     <button className="swap-button">Explore</button>
                 </div>
                 <img
-                    src="/logo.png"
+                    src="/logo_main.png"
                     alt="Solana Token Compression"
                     className="crypto-illustration"
                 />

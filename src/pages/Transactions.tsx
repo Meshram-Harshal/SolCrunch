@@ -3,13 +3,12 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { Loader } from "@/components/ui/loader";
 import moment from "moment";
 import { useTransactions } from "@/hooks/useTransactions";
-import { RotateCcw } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const Transactions = () => {
   const { publicKey } = useWallet();
   const [search, setSearch] = useState("");
-  const { transactions, isLoading, error, refetch } = useTransactions(publicKey);
+  const { transactions, isLoading, error} = useTransactions(publicKey);
   const [filteredTransactions, setFilteredTransactions] = useState(transactions);
 
   useEffect(() => {

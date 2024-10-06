@@ -32,8 +32,10 @@ const Navbar: React.FC = () => {
           {/* Logo on the left */}
           <Link to="/">
             <img
-              src="/logo.png"
+              src="./logo_main.svg"
               alt="SolCrunch Logo"
+              width={80}
+              height={80}
               className="h-20 max-w-full w-auto" // Adjust the height and ensure max width
             />
           </Link>
@@ -86,7 +88,7 @@ const Navbar: React.FC = () => {
                           Minting Forge
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link
                           to="/crunchy-swap"
                           className="block px-4 py-2 hover:bg-gray-800 rounded transition-colors"
@@ -94,7 +96,7 @@ const Navbar: React.FC = () => {
                         >
                           Crunchy Swap
                         </Link>
-                      </li>
+                      </li> */}
                       <li>
                         <Link
                           to="/rent"

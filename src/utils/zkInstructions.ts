@@ -37,6 +37,8 @@ import {
   checkIfAtaExist,
   checkIfAccountExist,
 } from "@/utils/solana";
+import BN from "bn.js";
+
 
 export type BaseIxResponse = {
   instructions: TransactionInstruction[];
@@ -332,7 +334,7 @@ export const createDecompressTokenIx = async ({
 
   const [inputAccounts] = selectMinCompressedTokenAccountsForTransfer(
     compressedTokenAccounts,
-    amount,
+    new BN(amount),
   );
 
   const proof = await lightRpc.getValidityProof(
