@@ -15,12 +15,11 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 import Rent from './pages/Rent';
-import TokenBalances from "./pages/CompressedTokens";
 import CompressedMintDetail from "./pages/CompressedMintDetail";
 import CreateMint from "./pages/CreateMint";
 import Transactions from "./pages/Transactions";
 import CompressedTokens from "./pages/CompressedTokens";
-import Swap from "./pages/Swap";
+// import Swap from "./pages/Swap";
 import Home from "./pages/Home/Home";
 
 // Main layout component (for routes other than Home)
@@ -62,10 +61,10 @@ const router = createBrowserRouter([
         path: "/Minting-Forge/:mint",
         element: <CompressedMintDetail />,
       },
-      {
-        path: "/crunchy-swap",
-        element: <Swap />,
-      },
+      // {
+      //   path: "/crunchy-swap",
+      //   element: <Swap />,
+      // },
     ],
   },
 ]);

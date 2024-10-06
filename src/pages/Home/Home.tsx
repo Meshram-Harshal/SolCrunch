@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             </div>
 
             <div className="logo-slider">
-                <FastMarquee direction="left" speed={50} loop={0} autoFill continuous className='grid'>
+                <FastMarquee direction="left" speed={50} loop={0} autoFill className='grid'>
                     <div className="logo-item">
                         <img src="/1.png" alt="Raydium Logo" />
                     </div>
@@ -86,17 +86,17 @@ const Home: React.FC = () => {
                     <motion.div className="card" whileHover={{ scale: 1.05 }}>
                         <SiLinuxmint className="icon" />
                         <h3>Minting Forge</h3>
-                        <p>Best Price and Route for swapping</p>
+                        <p>Directly Mint Compressed Tokens</p>
                     </motion.div>
                     <motion.div className="card" whileHover={{ scale: 1.05 }}>
                         <IoSwapVerticalOutline className="icon" />
                         <h3>Crunchy Swap</h3>
-                        <p>Compress and Decompress while buying or selling the tokens</p>
+                        <p>Swap Compressed tokens</p>
                     </motion.div>
                     <motion.div className="card" whileHover={{ scale: 1.05 }}>
                         <MdOutlineCalculate className="icon" />
                         <h3>Rent Calculator</h3>
-                        <p>All transactions are distributed over the network</p>
+                        <p>Calculate your rent</p>
                     </motion.div>
                 </div>
             </div>
