@@ -148,7 +148,7 @@ input[type="number"] {
 /* Customize the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
   background: rgb(15, 3, 63); /* Color of the thumb */
-  border-radius: 10px; /* Rounded corners for the thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */  
 }
 
 /* Change thumb color on hover */
@@ -159,7 +159,7 @@ input[type="number"] {
 /* Customize scrollbar for Firefox */
 * {
   scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: rgb(15, 3, 63) rgb(15, 3, 63); /* thumb color and track color */
+  scrollbar-color: rgb(255, 255, 255) rgb(15, 3, 63); /* thumb color and track color */
 }
 
 /* For Internet Explorer */

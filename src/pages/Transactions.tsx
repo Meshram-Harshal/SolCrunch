@@ -56,7 +56,7 @@ const Transactions = () => {
 
   return (
     <div style={{ background: 'rgb(15, 3, 63)' }} className="flex justify-center items-center h-screen">
-      <div style={{ marginTop: '4rem' }} className="relative bg-white/20 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-white/30 w-full max-w-2xl h-[80%] flex flex-col">
+      <div style={{ marginTop: '5rem' }} className="relative bg-white/20 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-white/30 w-full max-w-5xl h-[80%] flex flex-col">
         <div className="flex justify-between items-center pb-5">
           <h1 className="text-4xl font-semibold text-gray-100">Transactions</h1>
           {/* <button

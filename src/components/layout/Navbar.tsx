@@ -27,16 +27,17 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="fixed w-full top-0 left-0 z-10 bg-white/10 backdrop-blur-lg border-b border-white/30 shadow-lg">
-      <div className="max-w-7xl mx-auto px-3 py-4">
+      <div className="max-w-7xl mx-auto px-0 py-0">
         <div className="flex justify-between items-center">
           {/* Logo on the left */}
           <Link to="/">
             <img
               src="/logo.png"
               alt="SolCrunch Logo"
-              className="h-12 w-30"
+              className="h-20 max-w-full w-auto" // Adjust the height and ensure max width
             />
           </Link>
+
 
           {/* Centered Navigation Menu */}
           <div className="flex-1 flex justify-center">

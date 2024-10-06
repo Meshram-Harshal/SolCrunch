@@ -74,7 +74,7 @@ const CreateMint = ({ onSubmit }: Props) => {
     className="flex justify-center items-center min-h-screen"
     style={{ background: "rgb(15, 3, 63)" }} // Updated background color
   >
-    <div className="p-10 max-w-lg w-full bg-[#2A2D3C] bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50">
+    <div className="p-10 max-w-lg w-full bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50">
       <h1 className="text-4xl font-bold text-white mb-6 text-center">Create Mint</h1>
       <div className="space-y-4">
         <div>

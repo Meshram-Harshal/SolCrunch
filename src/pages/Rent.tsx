@@ -146,27 +146,15 @@ const Rent: React.FC = () => {
       </Button>
     </motion.div>
 
-    {/* Display token count */}
-    {tokenCount !== null && (
-      <motion.div
-        className="mt-6 text-xl text-green-400 whitespace-nowrap"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 0.6 }}
-      >
-        Total {tokenCount} token account(s) on Solscan
-      </motion.div>
-    )}
-
     {/* Display calculated savings */}
     {calculatedSavings !== null && (
       <motion.div
-        className="mt-2 text-xl text-green-400 whitespace-nowrap"
+        className="text-center mt-8 text-xl text-green-400 whitespace-nowrap"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.6 }}
       >
-        You can save up to {calculatedSavings.toFixed(6)} SOL by Token Compression
+        You can save up to {calculatedSavings.toFixed(6)} SOL by <br /> Token Compression
       </motion.div>
     )}
 

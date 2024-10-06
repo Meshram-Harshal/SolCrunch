@@ -279,7 +279,7 @@ const CompressedTokens: React.FC = () => {
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-[rgb(15,3,63)]">
   <div className="w-full max-w-4xl mx-auto px-4"> {/* Center the inner content with padding */}
-    <h1 className="text-5xl font-bold text-white mt-20 text-center">Compressed Tokens</h1>
+    <h1 style={{marginTop:'8.2rem'}} className="text-5xl font-bold text-white text-center">Compressed Tokens</h1>
     
     <ToggleBar currentMode={mode} onToggle={handleToggleMode} />
     
