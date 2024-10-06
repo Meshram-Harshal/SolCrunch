@@ -71,111 +71,119 @@ const Rent: React.FC = () => {
     }, [walletAddress, RPC_ENDPOINT]);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-purple-900 to-gray-900 px-4">
-            <div className="text-center max-w-md w-full">
-                {/* Solana Icon */}
-                <motion.div
-                    className="flex justify-center mb-8"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 100, damping: 10 }}
-                >
-                    <img
-                        src="https://cryptologos.cc/logos/solana-sol-logo.png"
-                        alt="Solana Icon"
-                        className="w-20 h-20"
-                    />
-                </motion.div>
+        <div
+  style={{ background: "rgb(15, 3, 63)" }} // The outer background color
+  className="min-h-screen flex items-center justify-center px-4"
+>
+  <div className="relative bg-white/10 backdrop-blur-lg rounded-xl p-10 shadow-lg border border-white/20 w-full max-w-md">
+    {/* Solana Icon */}
+    <motion.div
+      className="flex justify-center mb-8"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ type: 'spring', stiffness: 100, damping: 10 }}
+    >
+      <img
+        src="https://cryptologos.cc/logos/solana-sol-logo.png"
+        alt="Solana Icon"
+        className="w-20 h-20"
+      />
+    </motion.div>
 
-                {/* Title */}
-                <motion.h1
-                    className="text-4xl font-extrabold text-white mb-4 font-playpen" // Ensure 'font-playpen' is defined in Tailwind or replace with existing font
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.6 }}
-                >
-                    Find your rent in SPL tokens
-                </motion.h1>
+    {/* Title */}
+   {/* Centering the Heading */}
+<div className="flex justify-center">
+  <motion.h1
+    className="text-3xl font-extrabold text-white text-center mb-4 font-playpen"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.3, duration: 0.6 }}
+  >
+    Find your rent in SPL tokens
+  </motion.h1>
+</div>
 
-                {/* Description */}
-                <motion.p
-                    className="text-lg text-gray-300 mb-6"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
-                >
-                    {/* Bankless finds $802 on average in airdrops & more. Search your wallets. Set up alerts. Tell your Friends. */}
-                </motion.p>
 
-                {/* Wallet Address Input */}
-                <motion.div
-                    className="relative flex justify-center mb-4"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.7, duration: 0.6 }}
-                >
-                    <input
-                        type="text"
-                        placeholder="Wallet address..."
-                        value={walletAddress}
-                        onChange={handleInputChange}
-                        className="font-playwrite px-5 py-3 rounded-full w-80 bg-white text-gray-700 focus:outline-none shadow-lg"
-                    />
-                </motion.div>
+    {/* Description */}
+    <motion.p
+      className="text-lg text-gray-300 mb-6"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.5, duration: 0.6 }}
+    >
+      {/* Optional description text */}
+    </motion.p>
 
-                {/* Search Button */}
-                <motion.div
-                    className="flex justify-center"
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.9, duration: 0.6 }}
-                >
-                    <Button
-                        onClick={handleSearch}
-                        className="font-playpen px-6 py-3 bg-yellow-500 text-white font-bold rounded-full shadow-lg hover:bg-yellow-600 transition"
-                        disabled={isLoading || walletAddress === ''}
-                    >
-                        {isLoading ? <Loader className="w-4 h-4 text-white" /> : 'Search..'}
-                    </Button>
-                </motion.div>
+    {/* Wallet Address Input */}
+    <motion.div
+      className="relative flex justify-center mb-4"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ delay: 0.7, duration: 0.6 }}
+    >
+      <input
+        type="text"
+        placeholder="Wallet address..."
+        value={walletAddress}
+        onChange={handleInputChange}
+        className="font-playwrite px-5 py-3 rounded-full w-80 bg-white/30 text-gray-700 focus:outline-none shadow-lg"
+      />
+    </motion.div>
 
-                {/* Display token count */}
-                {tokenCount !== null && (
-                    <motion.div
-                        className="mt-6 text-xl text-green-400 whitespace-nowrap" // Ensures the text stays on one line
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.1, duration: 0.6 }}
-                    >
-                        Total {tokenCount} token account(s) on Solscan
-                    </motion.div>
-                )}
+    {/* Search Button */}
+    <motion.div
+      className="flex justify-center"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ delay: 0.9, duration: 0.6 }}
+    >
+      <Button
+        onClick={handleSearch}
+        className="font-playpen px-6 py-3 bg-yellow-500 text-white font-bold rounded-full shadow-lg hover:bg-yellow-600 transition"
+        disabled={isLoading || walletAddress === ''}
+      >
+        {isLoading ? <Loader className="w-4 h-4 text-white" /> : 'Search..'}
+      </Button>
+    </motion.div>
 
-                {/* Display calculated savings */}
-                {calculatedSavings !== null && (
-                    <motion.div
-                        className="mt-2 text-xl text-green-400 whitespace-nowrap" // Ensures the text stays on one line
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.3, duration: 0.6 }}
-                    >
-                        You can save up to {calculatedSavings.toFixed(6)} SOL by Token Compression
-                    </motion.div>
-                )}
+    {/* Display token count */}
+    {tokenCount !== null && (
+      <motion.div
+        className="mt-6 text-xl text-green-400 whitespace-nowrap"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
+      >
+        Total {tokenCount} token account(s) on Solscan
+      </motion.div>
+    )}
 
-                {/* Error Message */}
-                {errorMessage && (
-                    <motion.div
-                        className="mt-4 text-red-500 text-sm"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1.1, duration: 0.6 }}
-                    >
-                        {errorMessage}
-                    </motion.div>
-                )}
-            </div>
-        </div>
+    {/* Display calculated savings */}
+    {calculatedSavings !== null && (
+      <motion.div
+        className="mt-2 text-xl text-green-400 whitespace-nowrap"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.3, duration: 0.6 }}
+      >
+        You can save up to {calculatedSavings.toFixed(6)} SOL by Token Compression
+      </motion.div>
+    )}
+
+    {/* Error Message */}
+    {errorMessage && (
+      <motion.div
+        className="mt-4 text-red-500 text-sm"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 0.6 }}
+      >
+        {errorMessage}
+      </motion.div>
+    )}
+  </div>
+</div>
+
     );
 
 };

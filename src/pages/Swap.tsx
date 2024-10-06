@@ -17,7 +17,7 @@ const Swap = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-900 to-gray-900 flex items-center justify-center p-8">
+    <div  style={{ background: "rgb(15, 3, 63)" }} className="min-h-screen bg-gradient-to-b from-purple-900 to-gray-900 flex items-center justify-center p-8">
       <div className="bg-gray-800 rounded-2xl shadow-lg p-8 w-full max-w-lg bg-opacity-50 backdrop-blur-md relative">
         <div className="p-4 bg-gray-700 rounded-lg">
           <h2 className="text-white text-2xl font-bold mb-2">You're Selling</h2>
