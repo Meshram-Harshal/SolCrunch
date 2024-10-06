@@ -15,25 +15,22 @@ const Home: React.FC = () => {
     // Sample FAQs
     const faqs = [
         {
-            question: "What is a Multi-Swap DEX?",
-            answer: "A Multi-Swap DEX allows users to swap tokens across different liquidity pools seamlessly, maximizing trading efficiency."
+            question: "How is rent saved?",
+            answer: "Instead of storing onchain we are storing your account in solana ledger."
         },
         {
-            question: "How does MEV protection work?",
-            answer: "MEV protection ensures that your trades are executed fairly without front-running or sandwich attacks by bots."
+            question: "Are my funds saved?",
+            answer: "Your funds are SAFU.Even with the technology of ZKSNARKS your funds are safe."
         },
         {
-            question: "What tokens can I swap?",
-            answer: "You can swap a variety of SPL tokens on our platform, including popular tokens like SOL, USDC, and more."
+            question: "How many rent i can save?",
+            answer: "You will be saving ~0.002 per token compressed."
         },
         {
-            question: "Is there a fee for using the DEX?",
-            answer: "Yes, there is a small fee for each trade to support the platform and maintain liquidity."
+            question: "What services are currently available?",
+            answer: "Currently we are providing Compression/Decompression,compressed token minting and Calculate your rent."
         },
-        {
-            question: "How can I provide liquidity?",
-            answer: "You can provide liquidity by depositing your tokens into our liquidity pools. In return, you earn a share of the trading fees."
-        },
+        
     ];
 
     const toggleFAQ = (index: number) => {
@@ -44,9 +41,9 @@ const Home: React.FC = () => {
         <div className='outer-home'>
             <div className="home-container">
                 <div className="home-content">
-                    <h1 className="h1-home">The Multi-Swap DEX is Here</h1>
+                    <h1 className="h1-home">The All-in-One ZKcompression is Here</h1>
                     <p className="p-home">
-                        Power Your Trades with Solana's First Multi-Swap DEX. Effortless token swaps with MEV protection.
+                        Save rent on solana by reclaiming rent exempt
                     </p>
                     <button className="swap-button">Explore</button>
                 </div>
