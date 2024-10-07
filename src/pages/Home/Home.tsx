@@ -6,6 +6,7 @@ import { MdOutlineCalculate } from "react-icons/md";
 import { SiLinuxmint } from "react-icons/si";
 import { FaTwitter} from 'react-icons/fa';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
     // State to manage opened FAQ
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
                     <p className="p-home">
                         Save rent on solana by reclaiming rent exempt
                     </p>
-                    <button className="swap-button">Explore</button>
+                    <Link to="/Compression-Decompression"><button className="swap-button">Explore</button></Link>
                 </div>
                 <img
                     src="/logo_main.png"
