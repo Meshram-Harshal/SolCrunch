@@ -4,8 +4,7 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 import { FaCompressArrowsAlt } from "react-icons/fa";
 import { MdOutlineCalculate } from "react-icons/md";
 import { SiLinuxmint } from "react-icons/si";
-import { IoSwapVerticalOutline } from "react-icons/io5";
-import { FaTwitter, FaDiscord } from 'react-icons/fa';
+import { FaTwitter} from 'react-icons/fa';
 import './Home.css';
 
 const Home: React.FC = () => {
