@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           {/* Logo on the left */}
           <Link to="/">
             <img
-              src="/logo_main.svg"
+              src="/logo_main.png"
               alt="SolCrunch Logo"
               width={80}
               height={80}
