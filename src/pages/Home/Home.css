@@ -201,7 +201,7 @@
     display: flex;
     justify-content: center; /* Center align cards */
     flex-wrap: wrap; /* Allow wrapping */
-    gap: 2rem; /* Increase space between cards */
+    gap: 8rem; /* Increase space between cards */
 }
 
 .card {

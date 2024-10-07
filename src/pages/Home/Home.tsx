@@ -88,11 +88,11 @@ const Home: React.FC = () => {
                         <h3>Minting Forge</h3>
                         <p>Directly Mint Compressed Tokens</p>
                     </motion.div>
-                    <motion.div className="card" whileHover={{ scale: 1.05 }}>
+                    {/* <motion.div className="card" whileHover={{ scale: 1.05 }}>
                         <IoSwapVerticalOutline className="icon" />
                         <h3>Crunchy Swap</h3>
                         <p>Swap Compressed tokens</p>
-                    </motion.div>
+                    </motion.div> */}
                     <motion.div className="card" whileHover={{ scale: 1.05 }}>
                         <MdOutlineCalculate className="icon" />
                         <h3>Rent Calculator</h3>
@@ -130,7 +130,6 @@ const Home: React.FC = () => {
                     </div>
                     <div style={{fontSize:"2rem"}} className="footer-socials">
                         <FaTwitter />
-                        <FaDiscord />
                     </div>
                 </div>
                 <div className="footer-links">
