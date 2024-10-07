@@ -131,3 +131,7 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
+
+
+// updated with linear changes
