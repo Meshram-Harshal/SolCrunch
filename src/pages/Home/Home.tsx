@@ -4,11 +4,7 @@ import { motion } from 'framer-motion'; // Import Framer Motion
 import { FaCompressArrowsAlt } from "react-icons/fa";
 import { MdOutlineCalculate } from "react-icons/md";
 import { SiLinuxmint } from "react-icons/si";
-<<<<<<< HEAD
 import { FaTwitter} from 'react-icons/fa';
-=======
-import { FaTwitter } from 'react-icons/fa';
->>>>>>> 0f778a9d6330ec33763f4ceb5b9b509d39444190
 import './Home.css';
 
 const Home: React.FC = () => {
@@ -71,9 +67,6 @@ const Home: React.FC = () => {
                     <div className="logo-item">
                         <img src="/4.png" alt="Mango Markets Logo" />
                     </div>
-                    <div className="logo-item">
-                        <img src="/logo.png" alt="Mango Markets Logo" />
-                    </div>
                 </FastMarquee>
             </div>
 
@@ -126,10 +119,10 @@ const Home: React.FC = () => {
             <footer className="footer">
                 <div className="footer-content">
                     <div className="footer-logo">
-                        <img src="/logo.png" alt="Logo" />
+                        <img src="/logo_main.png" alt="Logo" />
                     </div>
                     <div className="footer-text">
-                        <p>Your description or tagline here.</p>
+                        <p>The All-in-one ZKcompression is Here</p>
                     </div>
                     <div style={{fontSize:"2rem"}} className="footer-socials">
                         <FaTwitter />
