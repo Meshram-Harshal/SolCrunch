@@ -163,10 +163,20 @@ const CompressedTokens: React.FC = () => {
 
   const filteredTokens = React.useMemo(() => {
     const lowercasedSearch = search.toLowerCase();
-    return (mode === 'Compression' ? splTokenAccounts : allCompressedTokens)?.filter((token) =>
-      token.mint.toLowerCase().includes(lowercasedSearch)
-    );
+  
+    return (mode === 'Compression' ? splTokenAccounts : allCompressedTokens)?.filter((token) => {
+      const balance = 'balance' in token ? Number(token.balance) : Number(token.amount);
+      
+      // Filter tokens with balance > 0 for decompression page
+      const isNonZeroBalance = mode !== 'Decompression' || balance > 0;
+  
+      // Filter by token mint address (search logic)
+      const matchesSearch = token.mint.toLowerCase().includes(lowercasedSearch);
+  
+      return isNonZeroBalance && matchesSearch;
+    });
   }, [mode, splTokenAccounts, allCompressedTokens, search]);
+  
 
   const tokensToRender = filteredTokens || [];
 
@@ -279,7 +289,7 @@ const CompressedTokens: React.FC = () => {
   return (
     <div className="flex flex-col items-center w-full min-h-screen bg-[rgb(15,3,63)]">
   <div className="w-full max-w-4xl mx-auto px-4"> {/* Center the inner content with padding */}
-    <h1 style={{marginTop:'8.2rem'}} className="text-5xl font-bold text-white text-center">Compressed Tokens</h1>
+    <h1 style={{marginTop:'8.2rem'}} className="text-5xl font-bold text-white text-center">Available Tokens</h1>
     
     <ToggleBar currentMode={mode} onToggle={handleToggleMode} />
     

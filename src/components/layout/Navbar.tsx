@@ -118,11 +118,11 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
   <a href="https://harshalwebfolio.netlify.app" target="_blank" rel="noopener noreferrer" className="hover:text-purple-500 transition-colors">
     Docs
   </a>
-</li>
+</li> */}
 
             </ul>
           </div>

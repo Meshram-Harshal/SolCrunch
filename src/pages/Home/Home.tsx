@@ -122,15 +122,16 @@ const Home: React.FC = () => {
                 <div className="footer-column">
                     <h3>About Us</h3>
                     <p>
-                        We provide Solana ZKcompression and token minting services, aiming to reduce rent costs and improve scalability.
-                    </p>
+                    SolCrunch provides a scalable solution for Solana by minimizing rent-exempt requirements and offering advanced zk-compression technology for token compression and decompression.</p>
                 </div>
                 <div className="footer-column">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="https://x.com/SolCrunch">Docs</a></li>
-                        <li><a href="/services">Services</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        {/* <li><a href="https://x.com/SolCrunch">Docs</a></li> */}
+                        <li><a href="/tx">Transactions</a></li>
+                        <li><a href="/Compression-Decompression">Compression/Decompression</a></li>
+                        <li><a href="/Minting-Forge">Minting Forge</a></li>
+                        <li><a href="/rent">Calculate your rent</a></li>
                     </ul>
                 </div>
                 <div className="footer-column">
