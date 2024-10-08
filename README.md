@@ -1,23 +1,12 @@
-# ZKMent
+# SolCrunch
 
-A web wallet that supports ZK compressed assets on Solana.
+SPL Token rent claiming Platform.
 
 ## Introduction
 
-ZKMent is a secure and user-friendly web wallet designed to manage ZK (Zero-Knowledge) compressed assets on the Solana blockchain. It leverages advanced cryptographic techniques to ensure privacy and efficiency, providing users with a seamless experience for handling their compressed digital assets.
+SolCrunch provides a scalable solution for Solana by minimizing rent-exempt requirements and offering advanced zk-compression technology for token compression and decompression. It facilitates the minting of compressed tokens and calculates rent exemptions based on the SPL tokens you hold. Aimed at addressing Solana's rent-exempt issue, where over 2% of the SOL supply is locked, SolCrunch reduces inefficiencies by offering rent calculation and optimization tools. By leveraging zk-compression and the Light protocol, SolCrunch enhances scalability and efficiency, providing a unique solution to Solana's rent-exemption problem.
 
-## Tech Stack
-
-ZKMent is built using a modern and robust set of technologies to ensure scalability, security, and a smooth user experience.
-
-### Frontend
-
-- **React**: A JavaScript library for building user interfaces.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
-- **Tailwind CSS**: A utility-first CSS framework for styling.
-- **Vite**: A build tool for modern web development.
-
-### Blockchain
+### Blockchain Technology
 
 - **Solana**: High-performance blockchain supporting builders around the world.
 - **Helius**: RPC provider.
@@ -25,7 +14,7 @@ ZKMent is built using a modern and robust set of technologies to ensure scalabil
 
 ## Environment Variables
 
-ZKMent requires certain environment variables to be set for proper configuration. Create a `.env` file in the root directory based on the provided `.env.example` files.
+SolCrunch requires certain environment variables to be set for proper configuration. Create a `.env` file in the root directory based on the provided `.env.example` files.
 
 | Variable                         | Description                                     | Example                                                          |
 | -------------------------------- | ------------------------------------------------| ---------------------------------------------------------------- |
