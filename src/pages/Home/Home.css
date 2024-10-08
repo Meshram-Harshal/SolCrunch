@@ -304,136 +304,83 @@
 }
 
 
-
+/* Footer styles */
 .footer {
-    padding: 3rem 0;
     color: #fff;
-    text-align: left; /* Align text to the left */
-    font-family: 'Arial', sans-serif;
-    display: flex; /* Flexbox layout for footer */
-    justify-content: space-between; /* Space between left and right */
-    align-items: flex-start; /* Align items to the start */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
+    padding: 3rem 1rem;
+    text-align: center;
 }
 
-.footer-content {
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
     margin-bottom: 2rem;
-    flex: 1; /* Allow it to grow */
-    max-width: 300px; /* Limit width of the left section */
 }
 
-.footer-logo img {
-    width: 150px;
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-column h3 {
     margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f39c12;
+    display: inline-block;
+    padding-bottom: 0.5rem;
 }
 
-.footer-text {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+.footer-column p {
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-.footer-socials {
-    display: flex;
-    justify-content: flex-start; /* Align social icons to the left */
-    gap: 1.5rem;
-}
-
-.footer-icon {
-    font-size: 1.8rem;
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.footer-icon:hover {
-    color: #1da1f2;
-}
-
-.footer-links {
-    display: flex;
-    flex-direction: column; /* Stack links vertically */
-    gap: 1rem; /* Space between links */
-    flex: 1; /* Allow it to grow */
-    max-width: 300px; /* Limit width of the right section */
-    align-items: flex-end; /* Align links to the right */
-}
-
-.footer-links h4 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.footer-links ul {
+.footer-column ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-links li {
-    margin-bottom: 0.5rem;
+.footer-column ul li {
+    margin: 0.5rem 0;
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-.footer-links a:hover {
-    color: #1da1f2;
-}
-
-.footer-bottom {
-    font-size: 0.9rem;
-    color: #aaa;
-    margin-top: 2rem; /* Space above bottom text */
-    text-align: center; /* Center the bottom text */
-    width: 100%; /* Full width for bottom section */
-}
-
-.footer-policies a {
-    color: #fff;
+.footer-column ul li a {
+    color: #f1c40f;
     text-decoration: none;
 }
 
-.footer-policies span {
-    margin: 0 0.5rem;
+.footer-column ul li a:hover {
+    text-decoration: underline;
 }
 
-.footer-policies a:hover {
-    color: #1da1f2;
-}
-
-
-.footer {
-    padding: 3rem 0;
-    color: #fff;
-    text-align: left; /* Align text to the left */
-    font-family: 'Arial', sans-serif;
-    display: flex; /* Flexbox layout for footer */
-    justify-content: space-between; /* Space between left and right */
-    align-items: flex-start; /* Align items to the start */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
-    position: relative; /* Set position to relative */
-    bottom: -75px; /* Position at the bottom */
-    width: 100%; /* Full width for footer */
-}
-
-.outer-home {
+.social-icons {
     display: flex;
-    flex-direction: column; /* Ensure content stacks vertically */
-    align-items: center;
-    color: white;
-    padding: 2% 5%;
-    overflow: hidden;
-    background: rgb(15, 3, 63);
-    min-height: 100vh; /* Changed to min-height */
-    padding-bottom: 5rem; /* Add bottom padding to prevent content from overlapping footer */
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.social-icons a {
+    color: #f39c12;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f1c40f;
+}
+
+.hr {
+    width: 100%;
+    height: 1px;
+    background: #f39c12;
+    margin: 1.5rem 0;
 }
 
 .footer-bottom {
+    margin-top: 1rem;
     font-size: 0.9rem;
-    color: #aaa;
-    text-align: center; /* Center the bottom text */
-    position: absolute; /* Position absolute for the bottom text */
-    bottom: 0;
 }

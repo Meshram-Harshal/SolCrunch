@@ -118,47 +118,35 @@ const Home: React.FC = () => {
                 </div>
             </div>
             <footer className="footer">
-                <div className="footer-content">
-                    <div className="footer-logo">
-                        <img src="/logo_main.png" alt="Logo" />
-                    </div>
-                    <div className="footer-text">
-                        <p>The All-in-one ZKcompression is Here</p>
-                    </div>
-                    <div style={{fontSize:"2rem"}} className="footer-socials">
-                        <FaTwitter />
-                    </div>
+            <div className="footer-container">
+                <div className="footer-column">
+                    <h3>About Us</h3>
+                    <p>
+                        We provide Solana ZKcompression and token minting services, aiming to reduce rent costs and improve scalability.
+                    </p>
                 </div>
-                <div className="footer-links">
-                    <h4>Useful Links</h4>
+                <div className="footer-column">
+                    <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        {/* Add more links as needed */}
+                        <li><a href="https://x.com/SolCrunch">Docs</a></li>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
-                <div className="footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        {/* Add more links as needed */}
-                    </ul>
-                    <div className="footer-policies">
-                        <a href="#terms">Terms of Service</a>
-                        <span>|</span>
-                        <a href="#privacy">Privacy Policy</a>
+                <div className="footer-column">
+                    <h3>Follow Us</h3>
+                    <div className="social-icons">
+                        <a href="https://x.com/SolCrunch" target="_blank" rel="noopener noreferrer">
+                            <FaTwitter />
+                        </a>
                     </div>
                 </div>
-                <div className="footer-bottom">
-                    <p>&copy; {new Date().getFullYear()} Your Company Name. All Rights Reserved.</p>
-                </div>
-            </footer>
-
+            </div>
+            <hr />
+            <div className="footer-bottom">
+                <p>&copy; 2024 ZKcompression. All rights reserved.</p>
+            </div>
+        </footer>
         </div>
     );
 };
