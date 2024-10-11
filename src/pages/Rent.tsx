@@ -1,8 +1,8 @@
 import React, { useState, useCallback, ChangeEvent } from 'react';
 import { motion } from 'framer-motion';
 import { PublicKey, Connection } from '@solana/web3.js';
-import { Button } from '@/components/ui/button'; // Ensure this component exist
-import { Loader } from '@/components/ui/loader'; // Ensure this component exist
+import { Button } from '@/components/ui/button'; // Ensure this component exists
+import { Loader } from '@/components/ui/loader'; // Ensure this component exists
 
 const Rent: React.FC = () => {
     // State variables
