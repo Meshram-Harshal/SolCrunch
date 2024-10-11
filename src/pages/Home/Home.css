@@ -190,7 +190,7 @@
 .section-title {
     font-size: 3.2rem;
     text-align: center;
-    margin-bottom: 6rem; /* Increase bottom margin */
+    margin-bottom: 6rem; 
     color: white;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -222,8 +222,8 @@
 
 .card:nth-child(even) {
     margin-top: 5rem;
-    transform: translateY(15px); /* Move even cards down */
-}
+    transform: translateY(15px); 
+} 
 
 .icon {
     font-size: 5rem; /* Make icons bigger */
@@ -251,6 +251,21 @@
     font-style: normal;
 }
 
+@media (max-width: 480px) {
+    
+.card:nth-child(odd) {
+    margin-bottom: 0;
+    transform: 0; 
+}
+
+.card:nth-child(even) {
+    margin-top: 0;
+    transform: 0; 
+} 
+}
+
+
+/* General Styles */
 .faq-section {
     border-radius: 10px;
     padding: 20px;
@@ -285,23 +300,80 @@
     justify-content: space-between;
     align-items: center;
     font-size: 2rem; /* Adjust font size as needed */
-    gap: 32rem;
     font-family: "Work Sans", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 200;
-    font-style: normal;
+    gap: 1rem;
 }
 
 .faq-answer {
     margin-top: 5px;
-    font-size: 18px; 
-    color: rgba(255, 255, 255, 0.8); 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .faq-item.active .faq-answer {
     display: block; /* Show the answer when active */
 }
+
+/* Mobile View (up to 480px) */
+@media (max-width: 480px) {
+    .faq-section {
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .faq-item {
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1.4rem;
+        gap: 1rem; /* Adjust gap for small screens */
+    }
+
+    .faq-answer {
+        font-size: 16px;
+    }
+}
+
+/* Tablet View (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .faq-item {
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 1.6rem;
+    }
+
+    .faq-answer {
+        font-size: 17px;
+    }
+}
+
+/* Desktop View (769px and above) */
+@media (min-width: 769px) {
+    .section-title {
+        font-size: 3rem;
+    }
+
+    .faq-question {
+        font-size: 2rem;
+    }
+
+    .faq-answer {
+        font-size: 18px;
+    }
+}
+
 
 
 /* Footer styles */

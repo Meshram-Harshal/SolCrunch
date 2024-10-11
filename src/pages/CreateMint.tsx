@@ -71,74 +71,74 @@ const CreateMint = ({ onSubmit }: Props) => {
 
   return (
     <div
-    className="flex justify-center items-center min-h-screen"
-    style={{ background: "rgb(15, 3, 63)" }} // Updated background color
-  >
-    <div className="p-10 max-w-lg w-full bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50">
-      <h1 className="text-4xl font-bold text-white mb-6 text-center">Create Mint</h1>
-      <div className="space-y-4">
-        <div>
-          <Label className="text-white">Decimals</Label>
-          <Input
-            className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
-            disabled={isCreating}
-            type="number"
-            placeholder="9"
-            value={decimals}
-            onChange={(e) => {
-              setDecimals(Number(e.target.value) > 0 ? Number(e.target.value) : "");
-            }}
-          />
+      className="flex justify-center items-center min-h-screen px-4" // Add horizontal padding for mobile
+      style={{ background: "rgb(15, 3, 63)" }}
+    >
+      <div className="p-10 max-w-lg w-full bg-opacity-90 rounded-xl shadow-lg backdrop-blur-lg border border-gray-300/50 sm:mx-4"> {/* Add responsive margin */}
+        <h1 className="text-4xl font-bold text-white mb-6 text-center">Create Mint</h1>
+        <div className="space-y-4">
+          <div>
+            <Label className="text-white">Decimals</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="number"
+              placeholder="9"
+              value={decimals}
+              onChange={(e) => {
+                setDecimals(Number(e.target.value) > 0 ? Number(e.target.value) : "");
+              }}
+            />
+          </div>
+          <div>
+            <Label className="text-white">Authority</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="text"
+              placeholder="0xqwerty..."
+              value={authority}
+              onChange={(e) => setAuthority(e.target.value)}
+            />
+          </div>
+          <div>
+            <Label className="text-white">Mint Amount</Label>
+            <Input
+              className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
+              disabled={isCreating}
+              type="number"
+              placeholder="Enter amount to mint"
+              value={mintAmount}
+              onChange={(e) => {
+                setMintAmount(Number(e.target.value) > 0 ? Number(e.target.value) : "");
+              }}
+            />
+          </div>
         </div>
-        <div>
-          <Label className="text-white">Authority</Label>
-          <Input
-            className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
-            disabled={isCreating}
-            type="text"
-            placeholder="0xqwerty..."
-            value={authority}
-            onChange={(e) => setAuthority(e.target.value)}
-          />
-        </div>
-        <div>
-          <Label className="text-white">Mint Amount</Label>
-          <Input
-            className="w-full bg-white/30 text-white placeholder-gray-200 border-none rounded-lg px-4 py-2"
-            disabled={isCreating}
-            type="number"
-            placeholder="Enter amount to mint"
-            value={mintAmount}
-            onChange={(e) => {
-              setMintAmount(Number(e.target.value) > 0 ? Number(e.target.value) : "");
-            }}
-          />
-        </div>
+        {isCreating ? (
+          <div className="flex justify-center h-9 items-center">
+            <Loader className="w-5" />
+          </div>
+        ) : (
+          <Button
+            className="mt-6 w-full bg-gradient-to-r from-purple-700 to-purple-900 text-white hover:bg-purple-600 shadow-lg hover:shadow-purple-900 rounded-lg py-2"
+            disabled={!canSend}
+            onClick={handleCreateMint}
+          >
+            Create Mint and Mint Tokens
+          </Button>
+        )}
       </div>
-      {isCreating ? (
-        <div className="flex justify-center h-9 items-center">
-          <Loader className="w-5" />
-        </div>
-      ) : (
-        <Button
-          className="mt-6 w-full bg-gradient-to-r from-purple-700 to-purple-900 text-white hover:bg-purple-600 shadow-lg hover:shadow-purple-900 rounded-lg py-2"
-          disabled={!canSend}
-          onClick={handleCreateMint}
-        >
-          Create Mint and Mint Tokens
-        </Button>
+      {newMintAddress && (
+        <MintCreatedModal
+          isOpen={!!newMintAddress}
+          onClose={() => setNewMintAddress(null)}
+          mintAddress={newMintAddress || ""}
+        />
       )}
     </div>
-    {newMintAddress && (
-      <MintCreatedModal
-        isOpen={!!newMintAddress}
-        onClose={() => setNewMintAddress(null)}
-        mintAddress={newMintAddress || ""}
-      />
-    )}
-  </div>
-  
   );
+  
 };
 
 export default CreateMint;
